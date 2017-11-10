@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>countDown</title>
+</head>
+<body>
+    <div id="input">
+        <form name="inputForm">
+            <p>Enter some text. You only have 50 characters.</p>
+            <input type="text" id='inputText'/>
+            <!--<input type="button" name="processButton" value="Process text"/>-->
+        </form>
+    <p>Number of characters remaining:</p>
+    <div id="output">
+        <p id="numLeft">50</p>
+    </div>
+    </div>
+</body>
+
+<script>
+    var counter = document.getElementById("numLeft");
+    var limit = 50;
+    var inputText = document.getElementById("inputText");
+
+    inputText.onkeyup = function() {
+        //counter.value = limit - input.value;
+        counter.innerHTML = String(limit - inputText.length);
+        console.log(inputText.value);
+        console.log(inputText.value.length);
+        var charsLeft = limit - inputText.value.length
+        document.getElementById("numLeft").innerHTML = charsLeft;
+        if (charsLeft < 0) {
+            counter.style.color = "red";
+        }
+    }
+</script>
+</html>

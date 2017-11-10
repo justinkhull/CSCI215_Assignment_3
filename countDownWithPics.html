@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>countDown</title>
+</head>
+<body>
+    <div id="input">
+        <form name="inputForm">
+            <p>Enter some text. You only have 50 characters.</p>
+            <input type="text" id='inputText'/>
+            <!--<input type="button" name="processButton" value="Process text"/>-->
+        </form>
+    <p>Number of characters remaining:</p>
+    <div id="output">
+        <!--<p id="numLeft">50</p>-->
+        <img id="tens" src="imgs/05.png">
+        <img id="ones" src="imgs/00.png">
+    </div>
+    </div>
+</body>
+
+<script>
+
+    var images = new Array();
+    images[0] = new Image;
+    images[0].src = "imgs/00.png";
+
+    images[1] = new Image;
+    images[1].src = "imgs/01.png";
+
+    images[2] = new Image;
+    images[2].src = "imgs/02.png";
+
+    images[3] = new Image;
+    images[3].src = "imgs/03.png";
+
+    images[4] = new Image;
+    images[4].src = "imgs/04.png";
+
+    images[5] = new Image;
+    images[5].src = "imgs/05.png";
+
+    images[6] = new Image;
+    images[6].src = "imgs/06.png";
+
+    images[7] = new Image;
+    images[7].src = "imgs/07.png";
+
+    images[8] = new Image;
+    images[8].src = "imgs/08.png";
+
+    images[9] = new Image;
+    images[9].src = "imgs/09.png";
+
+    console.log(images);
+    console.log(images[0].src);
+
+    var counterTens = document.getElementById("tens");
+    var counterOnes = document.getElementById("ones");
+
+    /*counterTens.setAttribute("src", "images[05]");
+    console.log("Tens: " + counterTens.src);
+    counterOnes.setAttribute("src", "images[05]");
+    console.log(counterOnes.src);*/
+    //counterOnes.src = "images[5]";
+
+
+    var limit = 50;
+    var inputText = document.getElementById("inputText");
+    var x = 0;
+    var y = 5;
+
+
+    inputText.onkeyup = function() {
+        //counter.value = limit - input.value;
+        //counterOnes.src = String(limit - inputText.length);
+
+        console.log("Entering function.");
+        console.log("x: " + x);
+
+        console.log(inputText.value);
+        console.log(inputText.value.length);
+        var charsLeft = limit - inputText.value.length
+        console.log(charsLeft);
+        //document.getElementById("numLeft").innerHTML = charsLeft;
+
+        //GETS IMAGE SOURCE FOR NEXT IMAGE COUNTING DOWN (ONES DIGIT)
+        x = x - 1;
+        //y = y - 1;
+
+        //IF X = 0, CYCLE BACK AROUND TO X = 9
+        if (x < 0) {
+            x = 9;
+            console.log("recycle");
+            y = y - 1;//COUNT TENS DIGIT DOWN EVERY TIME ONES DIGIT CYCLES THROUGH 9-0
+            counterTens.setAttribute("src", "imgs/0" + String(y) + ".png");
+
+            console.log("X: " + String(x));
+            console.log("Y: " + String(y));
+
+
+            }
+
+            else if (x === 0 && y === 0) {//***********DOESN'T WORK
+                counterOnes.setAttribute("src", "imgs/00.png");
+                            //inputText.onkeyup.preventDefault();
+                            alert("No more characters left");
+        }
+
+        console.log("Next ones: " + String(x));
+        console.log("imgs/0" + String(x) + ".png");
+        counterOnes.setAttribute("src", "imgs/0" + String(x) + ".png");
+
+
+
+
+        //counterOnes.setAttribute("src", "imgs/04.png");
+
+        /*if (charsLeft < 0) {
+            counter.style.color = "red";
+        }*/
+    }
+</script>
+</html>

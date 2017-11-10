@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>picViewer</title>
+</head>
+<body>
+    <img id="1" src="images/dog1.jpeg" height = "100" width = "100">
+
+    <img id="2" src="images/dog2.jpg" height = "100" width = "100">
+
+    <img id="3" src="images/dog3.jpg" height = "100" width = "100">
+
+    <img id="4" src="images/dog4.jpeg" height = "100" width = "100">
+
+    <img id="5" src="images/dog5.jpg" height = "100" width = "100">
+
+    <div id="imageDiv" style="position: relative; top: -70px; height: 400px; width: 600px; visibility: hidden;"></div>
+    <div id = "closeImgDiv" style="position: relative; top: -470px; height: 20px; width: 20px; visibility: hidden;"></div>
+</body>
+
+<script>
+    var closeImage = "closePic.png";
+    var closeImageDiv = document.getElementById('closeImgDiv');
+    var image1 = document.getElementById("1");
+    //Change opacity of thumbnail image when mouse over
+    image1.onmouseover = function(e) {
+        image1.style.opacity = "0.5";
+        image1.onmouseout = function(e) {
+            image1.style.opacity = "1.0";
+        }
+    }
+    image1.onclick = function(e) {
+        var imageDiv = document.getElementById('imageDiv');
+        //alert("clicked");
+        var theImage = document.getElementById("1").src;
+        imageDiv.innerHTML = "";
+        imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+        //imageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>";
+        closeImageDiv.innerHTML = "";
+        closeImageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>"
+        closeImageDiv.style.visibility = "visible";
+        imageDiv.style.visibility = "visible";
+        closeImageDiv.onclick = function(e) {
+                imageDiv.innerHTML = "";
+                imageDiv.style.visibility = "hidden";
+                closeImageDiv.innerHTML = "";
+                closeImageDiv.style.visibility = "hidden";
+        }
+    }
+    var image2 = document.getElementById("2");
+    //Change opacity of thumbnail image when mouse over
+    image2.onmouseover = function(e) {
+            image2.style.opacity = "0.5";
+            image2.onmouseout = function(e) {
+                image2.style.opacity = "1.0";
+            }
+        }
+    image2.onclick = function(e) {
+            var imageDiv = document.getElementById('imageDiv');
+            //alert("clicked");
+            var theImage = document.getElementById("2").src;
+            imageDiv.innerHTML = "";
+            imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+            closeImageDiv.innerHTML = "";
+                    closeImageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>"
+                    closeImageDiv.style.visibility = "visible";
+            imageDiv.style.visibility = "visible";
+            imageDiv.onclick = function(e) {
+                    imageDiv.innerHTML = "";
+                    imageDiv.style.visibility = "hidden";
+                    closeImageDiv.innerHTML = "";
+                    closeImageDiv.style.visibility = "hidden";
+            }
+        }
+    var image3 = document.getElementById("3");
+    //Change opacity of thumbnail image when mouse over
+        image3.onmouseover = function(e) {
+                image3.style.opacity = "0.5";
+                image3.onmouseout = function(e) {
+                    image3.style.opacity = "1.0";
+                }
+            }
+    image3.onclick = function(e) {
+            var imageDiv = document.getElementById('imageDiv');
+            //alert("clicked");
+            var theImage = document.getElementById("3").src;
+            imageDiv.innerHTML = "";
+            imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+            closeImageDiv.innerHTML = "";
+                     closeImageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>"
+                     closeImageDiv.style.visibility = "visible";
+            imageDiv.style.visibility = "visible";
+            imageDiv.onclick = function(e) {
+                    imageDiv.innerHTML = "";
+                    imageDiv.style.visibility = "hidden";
+                    closeImageDiv.innerHTML = "";
+                    closeImageDiv.style.visibility = "hidden";
+            }
+        }
+    var image4 = document.getElementById("4");
+        //Change opacity of thumbnail image when mouse over
+            image4.onmouseover = function(e) {
+                    image4.style.opacity = "0.5";
+                    image4.onmouseout = function(e) {
+                        image4.style.opacity = "1.0";
+                    }
+                }
+    image4.onclick = function(e) {
+            var imageDiv = document.getElementById('imageDiv');
+            //alert("clicked");
+            var theImage = document.getElementById("4").src;
+            imageDiv.innerHTML = "";
+            imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+            closeImageDiv.innerHTML = "";
+                    closeImageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>"
+                    closeImageDiv.style.visibility = "visible";
+            imageDiv.style.visibility = "visible";
+            imageDiv.onclick = function(e) {
+                    imageDiv.innerHTML = "";
+                    imageDiv.style.visibility = "hidden";
+                    closeImageDiv.innerHTML = "";
+                    closeImageDiv.style.visibility = "hidden";
+            }
+        }
+    var image5 = document.getElementById("5");
+            //Change opacity of thumbnail image when mouse over
+                image5.onmouseover = function(e) {
+                        image5.style.opacity = "0.5";
+                        image5.onmouseout = function(e) {
+                            image5.style.opacity = "1.0";
+                        }
+                    }
+    image5.onclick = function(e) {
+            var imageDiv = document.getElementById('imageDiv');
+            //alert("clicked");
+            var theImage = document.getElementById("5").src;
+            imageDiv.innerHTML = "";
+            imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+            closeImageDiv.innerHTML = "";
+                                closeImageDiv.innerHTML += "<img src=" + closeImage + " height=20 width=20><br>"
+                                closeImageDiv.style.visibility = "visible";
+            imageDiv.style.visibility = "visible";
+            imageDiv.onclick = function(e) {
+                    imageDiv.innerHTML = "";
+                    imageDiv.style.visibility = "hidden";
+                    closeImageDiv.innerHTML = "";
+                                        closeImageDiv.style.visibility = "hidden";
+            }
+        }
+
+    /*function showPic(theImage) {
+        var imageDiv = document.getElementById("imageDiv");
+        imageDiv.innerHTML = "";
+        imageDiv.innerHTML += "<img src=" + theImage + " height=400 width=600><br>";
+    }*/
+</script>
+
+</html>
